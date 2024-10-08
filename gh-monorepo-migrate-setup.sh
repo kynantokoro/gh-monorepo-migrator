@@ -49,7 +49,13 @@ while :; do
   echo "Fetching commits with cursor: $cursor"
 
   # Use the gh API to call GraphQL
-  response=$(gh api graphql -F query="$query" -F owner="$ORG" -F repo="$REPO" -F branchName="$BRANCH" -F first="$FIRST" -F after="$cursor")
+  if [ -z "$cursor" ]; then
+    # First request: no cursor needed
+    response=$(gh api graphql -F query="$query" -F owner="$ORG" -F repo="$REPO" -F branchName="$BRANCH" -F first="$FIRST")
+  else
+    # Subsequent requests: use cursor
+    response=$(gh api graphql -F query="$query" -F owner="$ORG" -F repo="$REPO" -F branchName="$BRANCH" -F first="$FIRST" -F after="$cursor")
+  fi
 
   # Output the response for debugging
   echo "Response: $response"
