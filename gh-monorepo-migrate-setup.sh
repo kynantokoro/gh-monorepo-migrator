@@ -6,7 +6,7 @@ REPO=""  # Replace with your repository name
 BRANCH="main"      # Branch name (replace if needed)
 OUTPUT_FILE="../commit-pr-mapping.jsonl"  # Output file for commits and PR mapping
 SUBDIRECTORY_NAME="" # Replace with the subdirectory name to be used the new mono-repository. You can just use the old repository name.
-FIRST=2  # Adjust based on how many commits you want to retrieve at once
+FIRST=100  # Adjust based on how many commits you want to retrieve at once
 
 # Clear or create the output file
 > "$OUTPUT_FILE"
@@ -109,4 +109,5 @@ if pr_number:
     commit.message = newmsg.encode("utf-8")
 '
 
+# Run git filter-repo to move the repository to a subdirectory
 git filter-repo --to-subdirectory-filter "$SUBDIRECTORY_NAME"
