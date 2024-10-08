@@ -10,6 +10,10 @@ PR references are information that GitHub holds, not Git itself. While it's poss
   - Change all the commit history to be committed under a certain directory, which will be the new directory in the mono-repo.
 - Use GitHub’s GraphQL API to retrieve PR references for each commit.
 
+You will get PR information when viewing old commits from oldrepo (multirepo1 in this case) in the new monorepo like this image
+<img width="421" alt="Screenshot 2024-10-08 at 11 51 47" src="https://github.com/user-attachments/assets/4e870a9a-321c-408e-a126-057dd389bd30">
+
+
 It might seem like a brute-force solution, but sometimes you just have to get the job done! :)
 
 # Steps
