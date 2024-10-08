@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Set your repository details
-ORG="kynantokoro"  # Replace with your organization name
-REPO="multirepo1"  # Replace with your repository name
+ORG=""  # Replace with your organization name
+REPO=""  # Replace with your repository name
 BRANCH="main"      # Branch name (replace if needed)
 OUTPUT_FILE="../commit-pr-mapping.jsonl"  # Output file for commits and PR mapping
-SUBDIRECTORY_NAME="multirepo1" # Replace with the subdirectory name to be used the new mono-repository. You can just use the old repository name.
+SUBDIRECTORY_NAME="" # Replace with the subdirectory name to be used the new mono-repository. You can just use the old repository name.
 FIRST=2  # Adjust based on how many commits you want to retrieve at once
 
 # Clear or create the output file
